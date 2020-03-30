@@ -1,5 +1,9 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import dotenv from 'dotenv';
+
+// Setting up environment variables
+dotenv.config();
 
 const app = express();
 
