@@ -12,10 +12,26 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 const port = process.env.PORT || 8000;
 
-// when a random route is inputed
-app.get('*', (req, res) => res.status(200).send({
+const Sequelize = require("sequelize");
+const connection = new Sequelize(process.env.DATABASE_URL);
+
+// When we hit homepage
+app.get('/', (req, res) => res.status(200).send({
     message: 'Welcome to this API.'
 }));
+
+
+// GET route call to get all players
+app.get('/players', function (req, res) {
+  const query = 'SELECT * FROM players;'
+  connection.query(query, { type: connection.QueryTypes.SELECT })
+    .then(players => {
+      console.log([players])
+      res.json(players)
+    })
+  }
+);
+
 
 app.listen(port, () => {
     console.log(`Server is running on PORT ${port}`);
