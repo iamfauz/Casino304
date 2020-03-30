@@ -4,7 +4,7 @@
   "description": "A Casino DB management system",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --exec babel-node ./api/index.js",
+    "dev": "nodemon --exec babel-node -r dotenv/config ./api/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

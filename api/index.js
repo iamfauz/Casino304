@@ -1,37 +1,25 @@
+/**
+ * This the starting point of our node app
+ * 
+ */
+
 import express from 'express';
 import bodyParser from 'body-parser';
-import dotenv from 'dotenv';
+import playerRoutes from './server/routes/playerRoutes';
 
-// Setting up environment variables
-dotenv.config();
-
+//General Config 
 const app = express();
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-
 const port = process.env.PORT || 8000;
 
-const Sequelize = require("sequelize");
-const connection = new Sequelize(process.env.DATABASE_URL);
+//Define all routes here
+app.use('/players', playerRoutes);
 
-// When we hit homepage
-app.get('/', (req, res) => res.status(200).send({
-    message: 'Welcome to this API.'
-}));
-
-
-// GET route call to get all players
-app.get('/players', function (req, res) {
-  const query = 'SELECT * FROM players;'
-  connection.query(query, { type: connection.QueryTypes.SELECT })
-    .then(players => {
-      console.log([players])
-      res.json(players)
-    })
-  }
-);
-
+// when a random route is inputed
+app.get('*', (req, res) => res.status(200).send({
+    message: 'Welcome to this API.',
+  }));
 
 app.listen(port, () => {
     console.log(`Server is running on PORT ${port}`);
