@@ -36,3 +36,9 @@ A Casino Database Management System. This Repo contains only the backend.
 - Use `http://localhost:3000` as base url for endpoints for now. Will Deploy suing heroku or Zeit Now later
 
 ## API Endpoints
+
+| METHOD | DESCRIPTION                             | ENDPOINTS                 | 
+| ------ | --------------------------------------- | ------------------------- |
+|  GET   | Gets all players                        | `/players`                |
+|  GET   | Login for player                        | `/players/login`          |
+
