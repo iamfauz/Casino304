@@ -1,7 +1,7 @@
 
 -- This Sql Script creats all tables and adds dummy data
 -- This Script is not used anywhere. 
--- This is however required for grading. 
+-- This is however required for grading and also acts as a backup if something happens to our remote db
 
 CREATE TABLE Branch
 (
@@ -60,7 +60,7 @@ CREATE TABLE PokerTable
 	table_type VARCHAR(20),
 	BranchID INT NOT NULL,
 	FOREIGN KEY (BranchID) REFERENCES Branch(ID)
-		ON DELETE NO ACTION
+		ON DELETE CASCADE
 		ON UPDATE CASCADE,
 	FOREIGN KEY (table_type) REFERENCES PokerTableType(table_type)
 		ON DELETE SET NULL
@@ -73,3 +73,153 @@ INSERT INTO PokerTable(table_no, table_type, BranchID) VALUES (1, 'Low Stakes', 
 INSERT INTO PokerTable(table_no, table_type, BranchID) VALUES (2, 'High Stakes', 1);
 INSERT INTO PokerTable(table_no, table_type, BranchID) VALUES (1, 'Low Stakes', 2);
 INSERT INTO PokerTable(table_no, table_type, BranchID) VALUES (2, 'High Stakes', 2);
+
+
+
+CREATE TABLE Game
+(
+	ID serial,
+	game_date DATE,
+	StartTime TIME,
+	EndTime TIME,
+	NoOfPlayers INT,
+	RakeAmount FLOAT,
+	BranchID INT,
+	table_no INT,
+	EmployeeID INT,
+	Tip FLOAT,
+	FOREIGN KEY (BranchID) REFERENCES Branch(ID)
+		ON DELETE SET NULL
+		ON UPDATE CASCADE,
+	FOREIGN KEY (BranchID, table_no) REFERENCES PokerTable(BranchID, table_no)
+		ON DELETE SET NULL
+		ON UPDATE CASCADE,
+	FOREIGN KEY (EmployeeID) REFERENCES Employee(ID)
+		ON DELETE SET NULL
+		ON UPDATE CASCADE,
+	PRIMARY KEY (ID)
+);
+
+CREATE TABLE Players
+(
+	ID serial,
+	Name VARCHAR(50), 
+	Email VARCHAR(50),
+	Password VARCHAR(20),
+	CurrentChipStack FLOAT,
+	CurrentGameID INT,
+	FOREIGN KEY (CurrentGameID) REFERENCES Game(ID)
+		ON DELETE SET NULL
+		ON UPDATE CASCADE,
+	PRIMARY KEY (ID),
+	UNIQUE (Email)
+);
+
+INSERT INTO Players(Name, Email, Password, CurrentChipStack) VALUES ('Fawaz', 'fawaz@gmail.com', 'fawaz123', 0.0);
+INSERT INTO Players(Name, Email, Password, CurrentChipStack) VALUES ('Daniel', 'daniel@gmail.com', 'daniel123', 0.0);
+INSERT INTO Players(Name, Email, Password, CurrentChipStack) VALUES ('Joel', 'joel@gmail.com', 'joel123', 0.0);
+INSERT INTO Players(Name, Email, Password, CurrentChipStack) VALUES ('Dimi', 'dimi@gmail.com', 'dimi123', 0.0);
+INSERT INTO Players(Name, Email, Password, CurrentChipStack) VALUES ('Phil', 'phil@gmail.com', 'phil123', 0.0);
+INSERT INTO Players(Name, Email, Password, CurrentChipStack) VALUES ('Magnus', 'magnus@gmail.com', 'magnus123', 0.0);
+
+
+
+
+CREATE TABLE CashIn
+(
+	ID serial,
+	Amount float,
+	cash_in_time TIME,
+    cash_in_date DATE,
+	PlayerID INT,
+	EmployeeID INT,
+	FOREIGN KEY (PlayerID) REFERENCES Players(ID)
+		ON DELETE SET NULL
+		ON UPDATE CASCADE,
+	FOREIGN KEY (EmployeeID) REFERENCES Employee(ID)
+		ON DELETE SET NULL
+		ON UPDATE CASCADE,
+	PRIMARY KEY (ID)
+);
+
+
+CREATE TABLE CashOut
+(
+	ID serial,
+	Amount float,
+	cash_out_time TIME,
+    cash_out_date DATE,
+	Discount INT,
+	PlayerID INT,
+	EmployeeID INT,
+	FOREIGN KEY (PlayerID) REFERENCES Players(ID)
+		ON DELETE SET NULL
+		ON UPDATE CASCADE,
+	FOREIGN KEY (EmployeeID) REFERENCES Employee(ID)
+		ON DELETE SET NULL
+		ON UPDATE CASCADE,
+	PRIMARY KEY (ID)
+);
+
+
+INSERT INTO CashIn(Amount,
+	cash_in_time,
+    cash_in_date,
+	PlayerID,
+	EmployeeID) VALUES (400, '12:30:00', '2020-04-04', 1, 2);
+INSERT INTO CashOut(Amount,
+	cash_out_time,
+    cash_out_date,
+	PlayerID,
+	EmployeeID) VALUES (600, '4:30:00', '2020-04-04', 1, 1);
+
+INSERT INTO CashIn(Amount,
+	cash_in_time,
+    cash_in_date,
+	PlayerID,
+	EmployeeID) VALUES (200, '5:30:00', '2020-04-04', 1, 2);
+INSERT INTO CashOut(Amount,
+	cash_out_time,
+    cash_out_date,
+	PlayerID,
+	EmployeeID) VALUES (200, '08:30:00', '2020-04-04', 1, 2);
+
+INSERT INTO CashIn(Amount,
+	cash_in_time,
+    cash_in_date,
+	PlayerID,
+	EmployeeID) VALUES (500, '6:30:00', '2020-04-04', 2, 2);
+
+INSERT INTO CashOut(Amount,
+	cash_out_time,
+    cash_out_date,
+	PlayerID,
+	EmployeeID) VALUES (900, '09:30:00', '2020-04-04', 2, 2);
+
+    INSERT INTO CashIn(Amount,
+	cash_in_time,
+    cash_in_date,
+	PlayerID,
+	EmployeeID) VALUES (200, '1:30:00', '2020-05-04', 2, 2);
+INSERT INTO CashOut(Amount,
+	cash_out_time,
+    cash_out_date,
+	PlayerID,
+	EmployeeID) VALUES (700, '5:30:00', '2020-05-04', 2, 1);
+
+
+CREATE TABLE GamePlay
+(
+	GameID INT,
+	PlayerID INT,
+	StartingStack FLOAT,
+	EndingStack FLOAT,
+	FOREIGN KEY (GameID) REFERENCES Game(ID)
+		ON DELETE CASCADE
+		ON UPDATE CASCADE,
+	FOREIGN KEY (PlayerID) REFERENCES Players(ID)
+		ON DELETE CASCADE
+		ON UPDATE CASCADE,
+	PRIMARY KEY (GameID, PlayerID)
+);
+   
