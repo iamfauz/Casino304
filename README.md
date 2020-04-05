@@ -39,13 +39,13 @@ There is file called`initDBSql.sql` that contains the sql script that creates al
 
 ## API Endpoints
 
-| METHOD | DESCRIPTION                             | ENDPOINTS                     |  
-| ------ | --------------------------------------- | ------------------------------|               
-|  GET   | Gets all players                        | `/players`                    |               
-|  GET   | Login for player                        | `/players/login`              |             
-|  GET   | Get All games                           | `/games`                      |
-|  GET   | Get a game by id                        | `/game/:id`                   |
-|  GET   | Get all games filtered by date          | `/games/date?date='date'`     |
-|  GET   | Get gameplays info of specific player   | `/games/player?player_id=id`  |
+| METHOD | DESCRIPTION                             | ENDPOINTS                          |  
+| ------ | --------------------------------------- | -----------------------------------|               
+|  GET   | Gets all players                        | `/players`                         |               
+|  GET   | Login for player                        | `/players/login`                   |             
+|  GET   | Get All games                           | `/games`                           |
+|  GET   | Get a game by id                        | `/game/:id`                        |
+|  GET   | Get all games filtered by date          | `/games/date?game_date='date'`     |
+|  GET   | Get gameplays info of specific player   | `/games/player?player_id=id`       |
 
 
