@@ -49,6 +49,6 @@ There is file called`initDBSql.sql` that contains the sql script that creates al
 |  GET   | Get all gameplays filtered by date      | `/gameplays`                             |
 |  GET   | Get gameplays info of a player          | `/gameplays/player?player_id=id`         |
 |  GET   | Count all games played by a player      | `/aggregate/total_games?player_id=id`    |
-|  GET   | Total rake for each date                | `/aggregate/total_rake_by_date           |
+|  GET   | Total rake for each date                | `/aggregate/total_rake_by_date`          |
 
 
