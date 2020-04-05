@@ -46,6 +46,7 @@ There is file called`initDBSql.sql` that contains the sql script that creates al
 |  GET   | Get All games                           | `/games`                           |
 |  GET   | Get a game by id                        | `/game/:id`                        |
 |  GET   | Get all games filtered by date          | `/games?game_date='date'`          |
+|  GET   | Get all gameplays filtered by date      | `/gameplays                        |
 |  GET   | Get gameplays info of specific player   | `/gameplays/player?player_id=id`   |
 
 
