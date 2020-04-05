@@ -2,7 +2,7 @@
 A Casino Database Management System. This Repo contains only the backend.
 
 #### NOTE TO INSTRUCTORS
-There is file called`initDBSql.sql` that contains the sqlscripttht ceates all the tables and add dummy data to it. Check it out for marking.
+There is file called`initDBSql.sql` that contains the sql script that creates all the tables and adds dummy data to it. Check it out for marking.
 
 ## Technologies Used
 
