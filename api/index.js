@@ -7,6 +7,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import playerRoutes from './server/routes/playerRoutes';
 import gameRoutes from './server/routes/gameRoutes';
+import gamePlayRoutes from './server/routes/gamePlayRoutes';
 
 //General Config 
 const app = express();
@@ -17,6 +18,7 @@ const port = process.env.PORT || 8000;
 //Define all routes here
 app.use('/players', playerRoutes);
 app.use('/games', gameRoutes);
+app.use('/gameplays', gamePlayRoutes);
 
 // when a random route is inputed
 app.get('*', (req, res) => res.status(200).send({

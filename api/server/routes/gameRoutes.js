@@ -9,8 +9,7 @@ const router = Router();
 
 
 router.get('/', GameController.getAllGames);
-router.patch('/:id', GameController.getGameByID);
-router.get('/date', GameController.getAllGamesByDate);
-router.get('/player', GameController.getAllGamesByPlayer);
+router.get('/:id', GameController.getGameByID);
+
 
 export default router;
