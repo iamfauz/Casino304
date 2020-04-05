@@ -100,6 +100,55 @@ CREATE TABLE Game
 	PRIMARY KEY (ID)
 );
 
+INSERT INTO Game(game_date,
+	StartTime,
+    EndTime,
+	NoOfPlayers,
+    RakeAmount,
+	BranchID,
+	table_no,
+	EmployeeID,
+	Tip) VALUES ('2020-04-04', '12:30:00','12:30:00', 100,  3, 1, 1, 1, 50);
+
+INSERT INTO Game(game_date,
+	StartTime,
+    EndTime,
+	NoOfPlayers,
+    RakeAmount,
+	BranchID,
+	table_no,
+	EmployeeID,
+	Tip) VALUES ('2020-04-04', '12:30:00','12:30:00', 3, 100, 1, 2, 1, 100);
+
+INSERT INTO Game(game_date,
+	StartTime,
+    EndTime,
+	NoOfPlayers,
+    RakeAmount,
+	BranchID,
+	table_no,
+	EmployeeID,
+	Tip) VALUES ('2020-04-05', '11:30:00','15:30:00', 4, 300, 1, 1, 2, 200);
+
+INSERT INTO Game(game_date,
+	StartTime,
+    EndTime,
+	NoOfPlayers,
+    RakeAmount,
+	BranchID,
+	table_no,
+	EmployeeID,
+	Tip) VALUES ('2020-04-05', '11:30:00','15:30:00', 4, 400, 1, 1, 2, 200);
+
+INSERT INTO Game(game_date,
+	StartTime,
+    EndTime,
+	NoOfPlayers,
+	BranchID,
+	table_no,
+	EmployeeID,
+	Tip) VALUES ('2020-04-05', '15:30:00','18:30:00', 3, 1, 1, 2, 300);
+
 CREATE TABLE Players
 (
 	ID serial,
@@ -223,3 +272,51 @@ CREATE TABLE GamePlay
 	PRIMARY KEY (GameID, PlayerID)
 );
    
+INSERT INTO GamePlay(GameID,
+	PlayerID,
+	StartingStack,
+	EndingStack ) VALUES (1, 1, 400, 600);
+INSERT INTO GamePlay(GameID,
+	PlayerID,
+	StartingStack,
+	EndingStack ) VALUES (1, 2, 200, 100);
+INSERT INTO GamePlay(GameID,
+	PlayerID,
+	StartingStack,
+	EndingStack ) VALUES (1, 3, 300, 300);
+INSERT INTO GamePlay(GameID,
+	PlayerID,
+	StartingStack,
+	EndingStack ) VALUES (2, 1, 500, 600);
+INSERT INTO GamePlay(GameID,
+	PlayerID,
+	StartingStack,
+	EndingStack ) VALUES (2, 4, 200, 100);
+INSERT INTO GamePlay(GameID,
+	PlayerID,
+	StartingStack,
+	EndingStack ) VALUES (2, 5, 300, 300);    
+INSERT INTO GamePlay(GameID,
+	PlayerID,
+	StartingStack,
+	EndingStack ) VALUES (3, 1, 500, 700);
+INSERT INTO GamePlay(GameID,
+	PlayerID,
+	StartingStack,
+	EndingStack ) VALUES (3, 3, 200, 100);
+INSERT INTO GamePlay(GameID,
+	PlayerID,
+	StartingStack,
+	EndingStack ) VALUES (3, 2, 300, 300);
+INSERT INTO GamePlay(GameID,
+	PlayerID,
+	StartingStack,
+	EndingStack ) VALUES (4, 1, 600, 700);
+INSERT INTO GamePlay(GameID,
+	PlayerID,
+	StartingStack,
+	EndingStack ) VALUES (4, 6, 200, 100);
+INSERT INTO GamePlay(GameID,
+	PlayerID,
+	StartingStack,
+	EndingStack ) VALUES (4, 5, 300, 300);
