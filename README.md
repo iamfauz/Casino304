@@ -1,6 +1,8 @@
 # Casino304
 A Casino Database Management System. This Repo contains only the backend.
 
+#### NOTE TO INSTRUCTORS
+There is file called`initDBSql.sql` that contains the sql script that creates all the tables and adds dummy data to it. Check it out for marking.
 
 ## Technologies Used
 
@@ -33,12 +35,18 @@ A Casino Database Management System. This Repo contains only the backend.
   ```shell
   $ npm run dev
   ```
-- Use `http://localhost:3000` as base url for endpoints for now. Will Deploy suing heroku or Zeit Now later
+- Use `http://localhost:3000` as base url for endpoints for now. Will Deploy to heroku or Zeit Now later
 
 ## API Endpoints
 
-| METHOD | DESCRIPTION                             | ENDPOINTS                 | 
-| ------ | --------------------------------------- | ------------------------- |
-|  GET   | Gets all players                        | `/players`                |
-|  GET   | Login for player                        | `/players/login`          |
+| METHOD | DESCRIPTION                             | ENDPOINTS                          |  
+| ------ | --------------------------------------- | -----------------------------------|               
+|  GET   | Gets all players                        | `/players`                         |               
+|  GET   | Login for player                        | `/players/login`                   |             
+|  GET   | Get All games                           | `/games`                           |
+|  GET   | Get a game by id                        | `/game/:id`                        |
+|  GET   | Get all games filtered by date          | `/games?game_date='date'`          |
+|  GET   | Get all gameplays filtered by date      | `/gameplays                        |
+|  GET   | Get gameplays info of specific player   | `/gameplays/player?player_id=id`   |
+
 
