@@ -33,7 +33,22 @@ class GamePlayController {
                
             })
     }
-
+    
+    // Count all games played a player
+    static async countGamesByPlayer(req, res) {
+        const playerID = req.query.player_id
+        const query = 'SELECT COUNT(*) AS GamesPlayed FROM game g, gameplay p  WHERE g.id = p.gameid AND playerid = :playerID;'
+        connection.query(query, 
+            { type: connection.QueryTypes.SELECT,
+              replacements: {
+                    playerID:playerID
+                  }
+            })
+            .then(games => {
+                console.log(games[0])
+                res.json(games[0])
+            })
+    }
   
 
 }
