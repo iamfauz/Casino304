@@ -53,6 +53,16 @@ class GameController {
             })
     }
 
+     // Get total rake for each date
+     static async getTotalRakeByDate(req, res) {
+        const query = 'SELECT game_date, SUM(rakeamount) AS TotalRake FROM game GROUP BY game_date;'
+        connection.query(query, { type: connection.QueryTypes.SELECT })
+            .then(rows => {
+                console.log(rows)
+                res.json(rows)
+            })
+    }
+
 }
 
 

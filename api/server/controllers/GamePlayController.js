@@ -44,9 +44,9 @@ class GamePlayController {
                     playerID:playerID
                   }
             })
-            .then(games => {
-                console.log(games[0])
-                res.json(games[0])
+            .then(rows => {
+                console.log(rows[0])
+                res.json(rows[0])
             })
     }
   
