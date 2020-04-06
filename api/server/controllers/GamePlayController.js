@@ -61,6 +61,24 @@ class GamePlayController {
             })
     }
 
+    // End Game
+    static async endGame(req, res) {
+        const endTime = req.body.endTime
+        const gameId = req.body.gameId
+        const query = 'UPDATE GAME SET endtime = :endTime WHERE id = :gameId;'
+        connection.query(query, {
+            type: connection.QueryTypes.UPDATE,
+            replacements: {
+                endTime: endTime,
+                gameId: gameId
+            }
+        })
+            .then(rows => {
+                console.log(rows)
+                res.json(rows)
+            })
+    }
+
 }
 
 export default GamePlayController;

@@ -11,5 +11,6 @@ router.get('/', GamePlayController.getAllGamePlays);
 router.get('/player', GamePlayController.getAllGamesByPlayer);
 router.get('/count', GamePlayController.countGamesByPlayer);
 router.get('/leaderBoards', GamePlayController.getPlayersInAllGames);
+router.patch('/endGame', GamePlayController.endGame);
 
 export default router;
