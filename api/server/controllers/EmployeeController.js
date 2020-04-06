@@ -6,24 +6,6 @@ var connection = require('../dbConnection')
  */
 class EmployeeController {
 
-    // create new employee
-    static async addEmployee(req, res) {
-        const name = req.body.name
-        const email = req.body.email
-        const phoneNo = req.body.PhoneNo
-        const password = req.body.password
-        const branchID = req.body.BranchID
-        const query = 'INSERT INTO Employee(Name, Email, PhoneNo, Password, BranchID) VALUES (:name, :email, :phoneNo, :password, :branchID);'
-        connection.query(query, { type: connection.QueryTypes.INSERT,
-            replacements: {
-                name: name,
-                email: email,
-                phoneNo: phoneNo,
-                password: password,
-                branchID: branchID,
-            } })
-    }
-
     // update existing employee given the employee's id
     static async updateEmployeeById(req, res) {
         const id = req.body.id
@@ -39,6 +21,10 @@ class EmployeeController {
                     id: id,
                     name: name,
                 } })
+                .then(rows => {
+                    console.log(rows)
+                    res.json(rows)
+                })
         }
         if (email !== undefined && email !== '') {
             const query ' "UPDATE Employee SET Email = :email WHERE ID = :id;'
@@ -47,6 +33,11 @@ class EmployeeController {
                     id: id,
                     email: email,
                 } })
+                .then(rows => {
+                    console.log(rows)
+                    res.json(rows)
+                })
+
         }
         if (phoneNo !== undefined && phoneNo !== '') {
             const query ' "UPDATE Employee SET PhoneNo = :phoneNo WHERE ID = :id;'
@@ -55,6 +46,10 @@ class EmployeeController {
                     id: id,
                     phoneNo: phoneNo,
                 } })
+                .then(rows => {
+                    console.log(rows)
+                    res.json(rows)
+                })
         }
         if (password !== undefined && password !== '') {
             const query ' "UPDATE Employee SET Password = :password WHERE ID = :id;'
@@ -63,6 +58,10 @@ class EmployeeController {
                     id: id,
                     password: password,
                 } })
+                .then(rows => {
+                    console.log(rows)
+                    res.json(rows)
+                })
         }
         if (branchID !== undefined && branchID !== '') {
             const query ' "UPDATE Employee SET BranchID = :branchID WHERE ID = :id;'
@@ -71,6 +70,10 @@ class EmployeeController {
                     id: id,
                     branchID: branchID,
                 } })
+                .then(rows => {
+                    console.log(rows)
+                    res.json(rows)
+                })
         }
     }
 

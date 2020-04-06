@@ -6,7 +6,6 @@ var connection = require('../dbConnection')
 
 class GamePlayController {
     
-
      // Get All gameplays from DB
      static async getAllGamePlays(req, res) {
         const query = 'SELECT * FROM gameplay;'

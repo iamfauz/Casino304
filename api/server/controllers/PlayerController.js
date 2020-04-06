@@ -46,6 +46,10 @@ class PlayerController {
             replacements: {
                 id: id
             } })
+            .then(rows => {
+                console.log(rows)
+                res.json(rows)
+            })
     }
 }
 

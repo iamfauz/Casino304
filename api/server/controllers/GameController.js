@@ -1,3 +1,5 @@
+import e from 'express';
+
 var connection = require('../dbConnection')
 
 /**
@@ -53,8 +55,8 @@ class GameController {
             })
     }
 
-     // Get total rake for each date
-     static async getTotalRakeByDate(req, res) {
+    // Get total rake for each date
+    static async getTotalRakeByDate(req, res) {
         const query = 'SELECT game_date, SUM(rakeamount) AS TotalRake FROM game GROUP BY game_date;'
         connection.query(query, { type: connection.QueryTypes.SELECT })
             .then(rows => {
@@ -76,6 +78,36 @@ class GameController {
                 }
             })
    }
+
+    // Add game
+    static async createGame(req, res) {
+        const startDate = req.body.startDate
+        const startTime = req.body.startTime
+        const numPlayers = req.body.numPlayers
+        const branchId = req.body.branchId
+        const tableNo = req.body.tableNo
+        const employeeId = req.body.employeeId
+        const tip = req.body.tip
+        const query = 'INSERT INTO Game(game_date, StartTime, NoOfPlayers, BranchID, table_no, EmployeeID, Tip) VALUES (:startDate, :startTime, :numPlayers, :branchId, :tableNo, :employeeId, :tip);'
+        connection.query(query, {
+            type: connection.QueryTypes.INSERT,
+            replacements: {
+                startDate: startDate,
+                startTime: startTime,
+                numPlayers: numPlayers,
+                branchId: branchId,
+                tableNo: tableNo,
+                employeeId: employeeId,
+                tip: tip,
+            }
+        })
+            .then(rows => {
+                console.log(rows)
+                res.json(rows)
+            })
+    }
+
+}
 
 }
 
