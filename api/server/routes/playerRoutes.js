@@ -8,9 +8,11 @@ const router = Router();
  * */
 
 
-router.get('/', PlayerController.getAllPlayers);
+router.get('/', EmployeeController.getAllPlayers);
 
 // Body of request should include email and password
 router.get('/login', PlayerController.loginByPlayer);
+
+router.delete('/:id', PlayerController.deletePlayerById);
 
 export default router;

@@ -3,7 +3,7 @@ var connection = require('../dbConnection')
 
 /**
  * Here you will define all Player related functions that interact with the the remote DB
- * The controller are tused by the routes defined in the routes folder
+ * The controller is used by the routes defined in the routes folder
  */
 class PlayerController {
 
@@ -19,10 +19,10 @@ class PlayerController {
 
     // Login for players 
       static async loginByPlayer(req, res) {
-        const email = req.body.email;
-        console.log("email: "  + email);
-        const password = req.body.password;
-        console.log("password: "  + password);
+        const email = req.body.email
+        console.log("email: "  + email)
+        const password = req.body.password
+        console.log("password: "  + password)
         const query = 'SELECT * FROM players WHERE email = :email AND password = :password;'
         connection.query(query, { type: connection.QueryTypes.SELECT,
             replacements: {
@@ -38,7 +38,15 @@ class PlayerController {
                 }
             })
     }
-    
+
+    static async deletePlayerById(req) {
+        const id = req.body.id
+        const query = 'DELETE FROM players WHERE ID = :id;'
+        connection.query(query, { type: connection.QueryTypes.DELETE,
+            replacements: {
+                id: id
+            } })
+    }
 }
 
 export default PlayerController;
