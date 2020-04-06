@@ -1,5 +1,6 @@
 # Casino304
 A Casino Database Management System. This Repo contains only the backend.
+Front-End Repo - https://github.com/iamfauz/Casino304-App
 
 #### NOTE TO INSTRUCTORS
 There is file called`initDBSql.sql` that contains the sql script that creates all the tables and adds dummy data to it. Check it out for marking.
