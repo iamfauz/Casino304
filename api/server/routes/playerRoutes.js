@@ -8,7 +8,7 @@ const router = Router();
  * */
 
 
-router.get('/', EmployeeController.getAllPlayers);
+router.get('/', PlayerController.getAllPlayers);
 
 // Body of request should include email and password
 router.get('/login', PlayerController.loginByPlayer);
