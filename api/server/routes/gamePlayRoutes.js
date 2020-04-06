@@ -10,5 +10,6 @@ const router = Router();
 router.get('/', GamePlayController.getAllGamePlays);
 router.get('/player', GamePlayController.getAllGamesByPlayer);
 router.get('/count', GamePlayController.countGamesByPlayer);
+router.get('/leaderBoards', GamePlayController.getPlayersInAllGames);
 
 export default router;

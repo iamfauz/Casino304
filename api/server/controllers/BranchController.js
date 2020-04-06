@@ -22,7 +22,7 @@ class BranchController {
                 } else {
                     res.status(404).json({message: "Error: No Branches or no Tables"})
                 }
-            }
+            })
     }
 
     static async getAllBranchNames(req, res) {
@@ -35,7 +35,7 @@ class BranchController {
                 } else {
                     res.status(404).json({message: "Error: No Branches"})
                 }
-            }
+            })
     }
 }
 

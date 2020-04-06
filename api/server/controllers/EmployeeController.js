@@ -15,7 +15,7 @@ class EmployeeController {
         const password = req.body.password
         const branchID = req.body.BranchID
         if (name !== undefined && name !== '') {
-            const query ' "UPDATE Employee SET Name = :name WHERE ID = :id;'
+            const query = 'UPDATE Employee SET Name = :name WHERE ID = :id;'
             connection.query(query, { type: connection.QueryTypes.UPDATE,
                 replacements: {
                     id: id,
@@ -27,7 +27,7 @@ class EmployeeController {
                 })
         }
         if (email !== undefined && email !== '') {
-            const query ' "UPDATE Employee SET Email = :email WHERE ID = :id;'
+            const query = 'UPDATE Employee SET Email = :email WHERE ID = :id;'
             connection.query(query, { type: connection.QueryTypes.UPDATE,
                 replacements: {
                     id: id,
@@ -40,7 +40,7 @@ class EmployeeController {
 
         }
         if (phoneNo !== undefined && phoneNo !== '') {
-            const query ' "UPDATE Employee SET PhoneNo = :phoneNo WHERE ID = :id;'
+            const query = 'UPDATE Employee SET PhoneNo = :phoneNo WHERE ID = :id;'
             connection.query(query, { type: connection.QueryTypes.UPDATE,
                 replacements: {
                     id: id,
@@ -52,7 +52,7 @@ class EmployeeController {
                 })
         }
         if (password !== undefined && password !== '') {
-            const query ' "UPDATE Employee SET Password = :password WHERE ID = :id;'
+            const query = 'UPDATE Employee SET Password = :password WHERE ID = :id;'
             connection.query(query, { type: connection.QueryTypes.UPDATE,
                 replacements: {
                     id: id,
@@ -64,7 +64,7 @@ class EmployeeController {
                 })
         }
         if (branchID !== undefined && branchID !== '') {
-            const query ' "UPDATE Employee SET BranchID = :branchID WHERE ID = :id;'
+            const query = 'UPDATE Employee SET BranchID = :branchID WHERE ID = :id;'
             connection.query(query, { type: connection.QueryTypes.UPDATE,
                 replacements: {
                     id: id,
