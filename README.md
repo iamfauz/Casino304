@@ -53,7 +53,7 @@ All SQL queries used can be found in the controller files. Go to api/server/cont
 |  GET   | Get all games filtered by date          | `/games?game_date='date'`                |
 |  GET   | Get all gameplays filtered by date      | `/gameplays`                             |
 |  GET   | Get gameplays info of a player          | `/gameplays/player?player_id=id`         |
-|  GET   | Get players who have played all games   | `/gameplays/leaderBoards                 |
+|  GET   | Get players who have played all games   | `/gameplays/leaderBoards`                |
 |  GET   | Count a players games                   | `/gameplays/count`                       |
 |  PATCH | End Game by entering endTime            | `/gameplays/endGame`                     |
 |  GET   | Count all games played by a player      | `/aggregate/total_games?player_id=id`    |
