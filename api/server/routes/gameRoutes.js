@@ -10,6 +10,6 @@ const router = Router();
 
 router.get('/', GameController.getAllGames);
 router.get('/:id', GameController.getGameByID);
-
+router.post('/', GameController.createGame);
 
 export default router;
