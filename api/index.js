@@ -23,8 +23,8 @@ app.use('/players', playerRoutes);
 app.use('/games', gameRoutes);
 app.use('/gameplays', gamePlayRoutes);
 app.use('/aggregate', aggregateRoutes);
-app.use('/employee', employeeRoutes);
-app.use('/branch', branchRoutes);
+app.use('/employees', employeeRoutes);
+app.use('/branchs', branchRoutes);
 
 app.listen(port, () => {
     console.log(`Server is running on PORT ${port}`);

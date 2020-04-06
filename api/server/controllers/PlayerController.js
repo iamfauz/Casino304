@@ -39,6 +39,7 @@ class PlayerController {
             })
     }
 
+    // delete player
     static async deletePlayerById(req) {
         const id = req.body.id
         const query = 'DELETE FROM players WHERE ID = :id;'
