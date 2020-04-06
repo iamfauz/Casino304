@@ -51,6 +51,7 @@ There is file called`initDBSql.sql` that contains the sql script that creates al
 |  GET   | Get all games filtered by date          | `/games?game_date='date'`                |
 |  GET   | Get all gameplays filtered by date      | `/gameplays`                             |
 |  GET   | Get gameplays info of a player          | `/gameplays/player?player_id=id`         |
+|  GET   | Get players who have played all games   | `/gameplays/leaderBoards                 |
 |  GET   | Count a players games                   | `/gameplays/count`                       |
 |  GET   | Count all games played by a player      | `/aggregate/total_games?player_id=id`    |
 |  GET   | Total rake for each date                | `/aggregate/total_rake_by_date`          |
