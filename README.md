@@ -1,5 +1,6 @@
 # Casino304
 A Casino Database Management System. This Repo contains only the backend.
+Front-End Repo - https://github.com/iamfauz/Casino304-App
 
 #### NOTE TO INSTRUCTORS
 There is file called`initDBSql.sql` that contains the sql script that creates all the tables and adds dummy data to it. Check it out for marking.
@@ -39,15 +40,16 @@ There is file called`initDBSql.sql` that contains the sql script that creates al
 
 ## API Endpoints
 
-| METHOD | DESCRIPTION                             | ENDPOINTS                          |  
-| ------ | --------------------------------------- | -----------------------------------|               
-|  GET   | Gets all players                        | `/players`                         |               
-|  GET   | Login for player                        | `/players/login`                   |             
-|  GET   | Get All games                           | `/games`                           |
-|  GET   | Get a game by id                        | `/game/:id`                        |
-|  GET   | Get all games filtered by date          | `/games?game_date='date'`          |
-|  GET   | Get all gameplays filtered by date      | `/gameplays`                       |
-|  GET   | Get gameplays info of a player          | `/gameplays/player?player_id=id`   |
-|  GET   | Count all games played by a player      | `/gameplays/count?player_id=id`    |
+| METHOD | DESCRIPTION                             | ENDPOINTS                                |  
+| ------ | --------------------------------------- | ---------------------------------------- |               
+|  GET   | Gets all players                        | `/players`                               |               
+|  GET   | Login for player                        | `/players/login`                         |             
+|  GET   | Get All games                           | `/games`                                 |
+|  GET   | Get a game by id                        | `/game/:id`                              |
+|  GET   | Get all games filtered by date          | `/games?game_date='date'`                |
+|  GET   | Get all gameplays filtered by date      | `/gameplays`                             |
+|  GET   | Get gameplays info of a player          | `/gameplays/player?player_id=id`         |
+|  GET   | Count all games played by a player      | `/aggregate/total_games?player_id=id`    |
+|  GET   | Total rake for each date                | `/aggregate/total_rake_by_date`          |
 
 
