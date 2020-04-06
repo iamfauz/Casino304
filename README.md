@@ -43,14 +43,20 @@ There is file called`initDBSql.sql` that contains the sql script that creates al
 | METHOD | DESCRIPTION                             | ENDPOINTS                                |  
 | ------ | --------------------------------------- | ---------------------------------------- |               
 |  GET   | Gets all players                        | `/players`                               |               
-|  GET   | Login for player                        | `/players/login`                         |             
+|  GET   | Login for player                        | `/players/login`                         | 
+|  DELETE| Delete player by id                     | `/players/:id`                           |            
 |  GET   | Get All games                           | `/games`                                 |
 |  POST  | Create Game                             | `/games`                                 |
 |  GET   | Get a game by id                        | `/game/:id`                              |
 |  GET   | Get all games filtered by date          | `/games?game_date='date'`                |
 |  GET   | Get all gameplays filtered by date      | `/gameplays`                             |
 |  GET   | Get gameplays info of a player          | `/gameplays/player?player_id=id`         |
+|  GET   | Count a players games                   | `/gameplays/count`                       |
 |  GET   | Count all games played by a player      | `/aggregate/total_games?player_id=id`    |
 |  GET   | Total rake for each date                | `/aggregate/total_rake_by_date`          |
+|  GET   | Get all the tables types for each branch| `/branches`                              |
+|  GET   | Get the names of all of the branches    | `/branches/branchnames`                  |
+|  PATCH | Update Employee data                    | `/employees/:id`                         |
+
 
 

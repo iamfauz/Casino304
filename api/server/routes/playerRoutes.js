@@ -13,4 +13,6 @@ router.get('/', PlayerController.getAllPlayers);
 // Body of request should include email and password
 router.get('/login', PlayerController.loginByPlayer);
 
+router.delete('/:id', PlayerController.deletePlayerById);
+
 export default router;

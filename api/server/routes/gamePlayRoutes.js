@@ -4,7 +4,7 @@ import GamePlayController from '../controllers/GamePlayController';
 const router = Router();
 
 /**
- * Define all gameplay related endpoints/routes i.e all endpoints starting with "http://localhost:3000/players"
+ * Define all gameplay related endpoints/routes i.e all endpoints starting with "http://localhost:3000/gameplays"
  * */
 
 router.get('/', GamePlayController.getAllGamePlays);
