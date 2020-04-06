@@ -9,4 +9,6 @@ const router = Router();
 
 router.get('/', BranchController.getTableTypesForEachBranch);
 
+router.get('/branchnames', BranchController.getAllBranchNames);
+
 export default router;
