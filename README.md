@@ -5,6 +5,8 @@ Front-End Repo - https://github.com/iamfauz/Casino304-App
 #### NOTE TO INSTRUCTORS
 There is file called`initDBSql.sql` that contains the sql script that creates all the tables and adds dummy data to it. Check it out for marking.
 
+All SQL queries used can be found in the controller files. Go to api/server/controller/. You'll find all the neccesary SQL queries used to interact with our remote db.
+
 ## Technologies Used
 
 [node]: (https://nodejs.org)
