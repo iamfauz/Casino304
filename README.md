@@ -53,11 +53,13 @@ There is file called`initDBSql.sql` that contains the sql script that creates al
 |  GET   | Get gameplays info of a player          | `/gameplays/player?player_id=id`         |
 |  GET   | Get players who have played all games   | `/gameplays/leaderBoards                 |
 |  GET   | Count a players games                   | `/gameplays/count`                       |
+|  PATCH | End Game by entering endTime            | `/gameplays/endGame`                     |
 |  GET   | Count all games played by a player      | `/aggregate/total_games?player_id=id`    |
 |  GET   | Total rake for each date                | `/aggregate/total_rake_by_date`          |
 |  GET   | Get all the tables types for each branch| `/branches`                              |
 |  GET   | Get the names of all of the branches    | `/branches/branchnames`                  |
 |  PATCH | Update Employee data                    | `/employees/:id`                         |
 
+                                                     
 
 
