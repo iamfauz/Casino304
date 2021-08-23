@@ -2,9 +2,10 @@
 A Casino Database Management System. This Repo contains only the backend.
 Front-End Repo - https://github.com/iamfauz/Casino304-App
 
-#### NOTE TO INSTRUCTORS
-There is file called`initDBSql.sql` that contains the sql script that creates all the tables and adds dummy data to it. Check it out for marking.
+Check google drive folder for more info - https://drive.google.com/drive/folders/1iY7cgz8o0zcPrrHRTL30F1ROklkidkJz?usp=sharing
 
+
+There is file called`initDBSql.sql` that contains the sql script that creates all the tables and adds dummy data to it. 
 All SQL queries used can be found in the controller files. Go to api/server/controller/. You'll find all the neccesary SQL queries used to interact with our remote db.
 
 ## Technologies Used
@@ -39,6 +40,12 @@ All SQL queries used can be found in the controller files. Go to api/server/cont
   $ npm run dev
   ```
 - Use `http://localhost:3000` as base url for endpoints for now. Will Deploy to heroku or Zeit Now later
+
+## ERD Diagram
+![Casino304ERD](https://user-images.githubusercontent.com/20114242/130533754-0c719983-64e4-488f-bc94-f537815239f9.png)
+
+## Schema
+https://docs.google.com/document/d/1pALJscXqIRhUh1yVWfpVBWvXBYJGrB_kO3VoUPx5N-0/edit?usp=sharing
 
 ## API Endpoints
 
