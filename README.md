@@ -16,6 +16,17 @@ All SQL queries used can be found in the controller files. Go to api/server/cont
 - [PostGreSQL](node)
 - [Express.js](https://expressjs.com).
 
+## ERD Diagram
+![Casino304ERD](https://user-images.githubusercontent.com/20114242/130533754-0c719983-64e4-488f-bc94-f537815239f9.png)
+
+## Schema
+https://docs.google.com/document/d/1pALJscXqIRhUh1yVWfpVBWvXBYJGrB_kO3VoUPx5N-0/edit?usp=sharing
+
+## Server Architecture
+
+MVC (Model-View-Contoller) architecture is used powered by routes and controllers
+![MVCArch](https://user-images.githubusercontent.com/20114242/130534863-bb9f9422-fb33-48e9-8adb-31a6e90667ad.PNG)
+
 ## Installations
 
 #### Getting started
@@ -41,11 +52,7 @@ All SQL queries used can be found in the controller files. Go to api/server/cont
   ```
 - Use `http://localhost:3000` as base url for endpoints for now. Will Deploy to heroku or Zeit Now later
 
-## ERD Diagram
-![Casino304ERD](https://user-images.githubusercontent.com/20114242/130533754-0c719983-64e4-488f-bc94-f537815239f9.png)
 
-## Schema
-https://docs.google.com/document/d/1pALJscXqIRhUh1yVWfpVBWvXBYJGrB_kO3VoUPx5N-0/edit?usp=sharing
 
 ## API Endpoints
 
